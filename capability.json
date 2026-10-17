@@ -1,0 +1,51 @@
+{
+  "source": "google_search",
+  "name": "Google Search",
+  "sample": {
+    "query": "retrieval augmented generation evaluation",
+    "num": 5
+  },
+  "inputs": "query; optional gl, hl, location, num/page 1–100, tbs, autocorrect",
+  "outputs": "results[].organic: title, link, snippet, position; usage.credits",
+  "limits": "Search snippets are not fetched page content. Omitted count and locale are not filled in by the SDK.",
+  "outputExample": {
+    "source": "google_search",
+    "status": "done",
+    "results": [
+      {
+        "searchParameters": {
+          "q": "openai",
+          "gl": "us",
+          "hl": "en",
+          "type": "search",
+          "num": 10,
+          "page": 1,
+          "engine": "google"
+        },
+        "organic": [
+          {
+            "title": "OpenAI | Research & Deployment",
+            "link": "https://openai.com/",
+            "snippet": "We believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems.",
+            "position": 1
+          }
+        ],
+        "peopleAlsoAsk": [
+          {
+            "question": "Is OpenAI created by Elon Musk?"
+          }
+        ],
+        "relatedSearches": [
+          {
+            "query": "OpenAI login"
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "credits": 0.02
+    }
+  },
+  "repository": "flashdata-google-search-action",
+  "action_name": "Google Search Evidence - FlashData"
+}
