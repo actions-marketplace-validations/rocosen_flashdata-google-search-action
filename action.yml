@@ -1,4 +1,4 @@
-name: Google Search
+name: Google Search Results
 description: Search Google and export organic results with titles, URLs,
   snippets and positions as JSON and JSONL.
 author: FlashData

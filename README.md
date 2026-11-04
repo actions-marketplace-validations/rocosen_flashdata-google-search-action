@@ -1,4 +1,4 @@
-# Google Search
+# Google Search Results
 
 Search Google and export organic results with titles, URLs, snippets and positions as JSON and JSONL.
 
@@ -9,7 +9,7 @@ Powered by the [FlashData Google Search API](https://flashdata.dev/docs/sources/
 Add a [FlashData API key](https://flashdata.dev/signup) as the repository secret `FLASHDATA_API_KEY`. API calls require FlashData Credits ([pricing](https://flashdata.dev/pricing)). Then add this workflow:
 
 ```yaml
-name: Google Search
+name: Google Search Results
 on:
   workflow_dispatch: {}
 permissions:
@@ -18,7 +18,7 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     steps:
-      - name: Google Search
+      - name: Google Search Results
         id: data
         uses: rocosen/flashdata-google-search-action@v0.1.1
         with:
@@ -51,7 +51,7 @@ Pass these fields in `options-json`:
 
 Invalid options fail before an API request. One paid query per run; no automatic pagination or retries.
 
-## Output files
+## Outputs
 
 - `response.json`: API response, including available result fields and usage.
 - `records.jsonl`: one search result per line.
@@ -71,7 +71,7 @@ Empty results produce an empty JSONL file and `result-count: 0`. Optional fields
 
 ## Pricing and errors
 
-The action is free to install; FlashData API usage is billed in Credits. GitHub runner/artifact costs are separate. [Current pricing](https://flashdata.dev/pricing).
+The action is free to install. FlashData API calls use paid Credits; GitHub runner/artifact costs are separate. [Current pricing](https://flashdata.dev/pricing).
 
 401: check the API key. 402: add Credits. 429: rate/quota limit. After a timeout, check [FlashData Jobs](https://flashdata.dev) before rerunning: a request may already have been accepted. Paid POST requests are not retried. Requests have a 65-second timeout and a 16-MiB response limit.
 
