@@ -1,6 +1,6 @@
-name: Google Search Evidence - FlashData
-description: Export current web evidence for a research agent, with original
-  titles, links, snippets and search positions.
+name: Google Search Results
+description: Search Google and export organic results with titles, URLs,
+  snippets and positions as JSON and JSONL.
 author: FlashData
 branding:
   icon: search
